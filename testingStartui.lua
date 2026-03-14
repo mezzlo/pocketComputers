@@ -9,11 +9,11 @@ local main = basalt.createFrame()
 local element1 = main:addContainer()
     :setSize(26, 20)
 
--- Label element
-local element2 = main:addLabel()
+-- Container element
+local element2 = main:addContainer()
     :setPosition(6, 3)
-    :setSize(17, 1)
-    :setText("What's your name?")
+    :setSize(17, 15)
+    :setBackground(colors.lightGray)
 
 -- Label element
 local element3 = main:addLabel()
@@ -28,12 +28,18 @@ local element4 = main:addInput()
     :setPlaceholder("BurgerBob")
     :setBackground(colors.lightBlue)
 
+-- Label element
+local element5 = main:addLabel()
+    :setPosition(6, 3)
+    :setSize(17, 1)
+    :setText("What's your name?")
+
 -- Button element
-local element5 = main:addButton()
+local element6 = main:addButton()
     :setPosition(8, 14)
-    :setSize(12, 3)
+    :setSize(13, 3)
     :setText("Confirm")
     :setBackground(colors.green)
 
 -- Start the UI
-basalt.autoUpdate()
+basalt.run()
