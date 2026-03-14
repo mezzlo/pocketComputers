@@ -41,5 +41,29 @@ local element6 = main:addButton()
     :setText("Confirm")
     :setBackground(colors.green)
 
+-- Container element
+local element7 = main:addContainer()
+    :setPosition(4, 1)
+    :setSize(1, 18)
+    :setBackground(colors.brown)
+
+-- Container element
+local element8 = main:addContainer()
+    :setPosition(5, 1)
+    :setSize(19, 1)
+    :setBackground(colors.brown)
+
+-- Container element
+local element9 = main:addContainer()
+    :setPosition(24, 1)
+    :setSize(1, 18)
+    :setBackground(colors.brown)
+
+-- Container element
+local element10 = main:addContainer()
+    :setPosition(5, 18)
+    :setSize(19, 1)
+    :setBackground(colors.brown)
+
 -- Start the UI
 basalt.run()
