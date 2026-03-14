@@ -11,8 +11,8 @@ local element1 = main:addContainer()
 
 -- Container element
 local element2 = main:addContainer()
-    :setPosition(6, 3)
-    :setSize(17, 15)
+    :setPosition(5, 2)
+    :setSize(19, 16)
     :setBackground(colors.lightGray)
 
 -- Label element
