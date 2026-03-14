@@ -5,8 +5,8 @@ local basalt = require("basalt")
 local main = basalt.createFrame()
     :setSize(26, 20)
 
--- Flexbox element
-local element1 = main:addFlexbox()
+-- Container element
+local element1 = main:addContainer()
     :setSize(26, 20)
 
 -- Label element
