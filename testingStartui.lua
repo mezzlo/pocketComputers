@@ -40,6 +40,9 @@ local element6 = main:addButton()
     :setSize(13, 3)
     :setText("Confirm")
     :setBackground(colors.green)
+element6:onClick(function (self)
+    :setBackground(colors.red)
+end)
 
 -- Container element
 local element7 = main:addContainer()
