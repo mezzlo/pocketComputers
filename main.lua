@@ -14,19 +14,56 @@ local main = basalt.createFrame()
 -- Container element
 local element1 = main:addContainer()
     :setSize(26, 20)
-    :setBackground(colors.green)
+    :setBackground(colors.lightGray)
+
+-- Container element
+local element2 = main:addContainer()
+    :setSize(1, 20)
+    :setBackground(colors.brown)
+
+-- Container element
+local element3 = main:addContainer()
+    :setSize(26, 1)
+    :setBackground(colors.brown)
+
+-- Container element
+local element4 = main:addContainer()
+    :setPosition(1, 20)
+    :setSize(26, 1)
+    :setBackground(colors.brown)
+
+-- Container element
+local element5 = main:addContainer()
+    :setPosition(26, 1)
+    :setSize(1, 20)
+    :setBackground(colors.brown)
 
 -- Label element
-local element2 = main:addLabel()
-    :setPosition(6, 7)
-    :setSize(5, 1)
-    :setText("Hello")
+local element6 = main:addLabel()
+    :setPosition(2, 2)
+    :setSize(24, 1)
+    :setText("Hello ".. playerName.. ",")
 
--- Label element
-local element3 = main:addLabel()
-    :setPosition(12, 7)
-    :setSize(15, 1)
-    :setText(playerName)
+-- Button element
+local element7 = main:addButton()
+    :setPosition(8, 5)
+    :setSize(12, 3)
+    :setText("Requests")
+    :setBackground(colors.cyan)
+
+-- Button element
+local element8 = main:addButton()
+    :setPosition(8, 10)
+    :setSize(12, 3)
+    :setText("Donations")
+    :setBackground(colors.cyan)
+
+-- Button element
+local element9 = main:addButton()
+    :setPosition(7, 15)
+    :setSize(14, 3)
+    :setText("Contributions")
+    :setBackground(colors.cyan)
 
 -- Start the UI
 basalt.run()
