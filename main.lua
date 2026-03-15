@@ -118,5 +118,5 @@ local element9 = main:addButton()
 
 -- Start the UI
 
-requestScreen.setVisible(false)
+requestScreen:setVisible(false)
 basalt.run()
