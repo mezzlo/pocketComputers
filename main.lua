@@ -138,6 +138,7 @@ local items = {
         :setSize(14, 1)
         :setPlaceholder("type here...")
         :setBackground(colors.black)
+        :setForeground(colors.white)
         :setPlaceholderColor(colors.lightGray)
     
     -- Label element
@@ -167,7 +168,7 @@ local items = {
     end
     updateList()
 
-    searchBar:onStateChange(function(self, value)
+    searchBar:onChange(function(self, value)
         updateList(value)
     end)
 
