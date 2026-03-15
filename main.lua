@@ -110,10 +110,13 @@ local element9 = main:addButton()
     -- List element
     local element77 = requestScreen:addList()
         :setPosition(2, 2)
-        :setSize(14, 18)
+        :setSize(20, 18)
         :setBackground(colors.black)
         :setForeground(colors.white)
-        :setItems({"Spruce Oak Logs", "Maple Logs"})
+    element77:setItems({
+        {text = "Spruce Logs"},
+        {text = "Maple Logs"}
+    })
 
     goToRequests:onClick(function (self)
         main:setVisible(false)
