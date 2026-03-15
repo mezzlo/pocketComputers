@@ -169,7 +169,13 @@ local items = {
     updateList()
 
     searchBar:onKey(function(self, value)
-        updateList(value)
+        os.queueEvent("refreshList")
+    end)
+
+    basalt.onEvent(function(event)
+        if event == "refreshList" then
+            updateList(searchBar:getValue())
+        end
     end)
 
 -- Start the UI
