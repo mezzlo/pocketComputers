@@ -113,7 +113,7 @@ local element9 = main:addButton()
 
     goToRequests:onClick(function (self)
         main.setVisible(false)
-        requestScreen(true)
+        requestScreen.setVisible(true)
     end)
 
 -- Start the UI
