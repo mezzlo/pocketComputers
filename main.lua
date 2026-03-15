@@ -6,6 +6,7 @@ term.setCursorPos(1,1)
 
 -- Basalt 2 Generated Code
 local basalt = require("basalt")
+local requestScreen = nil
 
 -- Create main frame
 local main = basalt.createFrame()
@@ -17,23 +18,23 @@ local element1 = main:addContainer()
     :setBackground(colors.lightGray)
 
 -- Container element
-local element2 = main:addContainer()
+local border0 = main:addContainer()
     :setSize(1, 20)
     :setBackground(colors.brown)
 
 -- Container element
-local element3 = main:addContainer()
+local border1 = main:addContainer()
     :setSize(26, 1)
     :setBackground(colors.brown)
 
 -- Container element
-local element4 = main:addContainer()
+local border2 = main:addContainer()
     :setPosition(1, 20)
     :setSize(26, 1)
     :setBackground(colors.brown)
 
 -- Container element
-local element5 = main:addContainer()
+local border3 = main:addContainer()
     :setPosition(26, 1)
     :setSize(1, 20)
     :setBackground(colors.brown)
@@ -45,11 +46,15 @@ local element6 = main:addLabel()
     :setText("Hello ".. playerName.. ",")
 
 -- Button element
-local element7 = main:addButton()
+local goToRequests = main:addButton()
     :setPosition(8, 5)
     :setSize(12, 3)
     :setText("Requests")
     :setBackground(colors.cyan)
+goToRequests:onClick(function (self)
+    main.setVisible(false)
+    requestScreen(true)
+end)
 
 -- Button element
 local element8 = main:addButton()
@@ -65,5 +70,51 @@ local element9 = main:addButton()
     :setText("Contributions")
     :setBackground(colors.cyan)
 
+-- Request Screen
+
+    -- Create main frame
+    requestScreen = main:addFrame()
+        :setSize(26, 20)
+
+    -- Container element
+    local element1 = requestScreen:addContainer()
+        :setSize(26, 20)
+
+    -- Container element
+    local element2 = requestScreen:addContainer()
+        :setSize(1, 20)
+        :setBackground(colors.brown)
+
+    -- Container element
+    local element3 = requestScreen:addContainer()
+        :setPosition(26, 1)
+        :setSize(1, 20)
+        :setBackground(colors.brown)
+
+    -- Container element
+    local element4 = requestScreen:addContainer()
+        :setSize(26, 1)
+        :setBackground(colors.brown)
+
+    -- Container element
+    local element5 = requestScreen:addContainer()
+        :setPosition(1, 20)
+        :setSize(26, 1)
+        :setBackground(colors.brown)
+
+    -- Container element
+    local element6 = requestScreen:addContainer()
+        :setPosition(2, 2)
+        :setSize(24, 18)
+        :setBackground(colors.lightGray)
+
+    -- List element
+    local element7 = requestScreen:addList()
+        :setPosition(2, 2)
+        :setSize(14, 18)
+        :setItems({"Spruce Oak Logs", "Maple Logs"})
+
 -- Start the UI
+
+requestScreen.setVisible(false)
 basalt.run()
