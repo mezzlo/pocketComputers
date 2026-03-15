@@ -9,7 +9,11 @@ local basalt = require("basalt")
 local requestScreen = nil
 
 -- Create main frame
-local main = basalt.createFrame()
+
+local mainFrame = basalt.createFrame()
+    :setSize(26, 20)
+
+local main = mainFrame:addFrame()
     :setSize(26, 20)
 
 -- Container element
