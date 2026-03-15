@@ -158,19 +158,18 @@ local items = {
     
         for _,item in ipairs(items) do
             if filter == nil or filter == "" then
-                list:addItem(" "..item)
+                list:addItem(item)
     
-            elseif string.find(string.lower(item), string.lower(filter)) then
-                list:addItem(" "..item)
+            elseif string.find(string.lower(item), string.lower(filter), 1, true) then
+                list:addItem(item)
             end
         end
 
     end
     updateList()
 
-    searchBar:onChange(function(self, value)
+    searchBar:onKey(function(self, value)
         updateList(value)
-        element100:setText("Search1:")
     end)
 
 -- Start the UI
