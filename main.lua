@@ -70,57 +70,110 @@ local element9 = main:addButton()
     :setBackground(colors.cyan)
 
 -- Request Screen
+local items = {
+    "Spruce Logs",
+    "Oak Logs",
+    "Maple Logs",
+    "Birch Logs",
+    "Jungle Logs",
+    "Acacia Logs"
+}
 
     -- Create main frame
     requestScreen = mainFrame:addFrame()
         :setSize(26, 20)
-
+    
     -- Container element
-    local element11 = requestScreen:addContainer()
+    local element1 = requestScreen:addContainer()
         :setSize(26, 20)
-
+    
     -- Container element
-    local element22 = requestScreen:addContainer()
+    local element2 = requestScreen:addContainer()
         :setSize(1, 20)
         :setBackground(colors.brown)
-
+    
     -- Container element
-    local element33 = requestScreen:addContainer()
+    local element3 = requestScreen:addContainer()
         :setPosition(26, 1)
         :setSize(1, 20)
         :setBackground(colors.brown)
-
+    
     -- Container element
-    local element44 = requestScreen:addContainer()
+    local element4 = requestScreen:addContainer()
         :setSize(26, 1)
         :setBackground(colors.brown)
-
+    
     -- Container element
-    local element55 = requestScreen:addContainer()
+    local element5 = requestScreen:addContainer()
         :setPosition(1, 20)
         :setSize(26, 1)
         :setBackground(colors.brown)
-
+    
     -- Container element
-    local element66 = requestScreen:addContainer()
+    local element6 = requestScreen:addContainer()
         :setPosition(2, 2)
         :setSize(24, 18)
         :setBackground(colors.lightGray)
-
+    
     -- List element
-    local element77 = requestScreen:addList()
-        :setPosition(2, 2)
-        :setSize(20, 18)
+    local list = requestScreen:addList()
+        :setPosition(3, 6)
+        :setSize(22, 12)
+        :setSelectedBackground(colors.green)
         :setBackground(colors.black)
         :setForeground(colors.white)
-    element77:setItems({
-        {text = "Spruce Logs"},
-        {text = "Maple Logs"}
-    })
+    
+    -- Button element
+    local element8 = requestScreen:addButton()
+        :setPosition(17, 19)
+        :setSize(8, 1)
+        :setText("Request")
+        :setBackground(colors.green)
+    
+    -- Input element
+    local searchBar = requestScreen:addInput()
+        :setPosition(11, 5)
+        :setSize(14, 1)
+        :setPlaceholder("type here...")
+        :setFocusedBackground(colors.black)
+        :setPlaceholderColor(colors.lightGray)
+    
+    -- Label element
+    local element10 = requestScreen:addLabel()
+        :setPosition(3, 5)
+        :setText("Search:")
+    
+    -- BigFont element
+    local element11 = requestScreen:addBigFont()
+        :setPosition(2, 2)
+        :setSize(24, 2)
+        :setText("Request Resources:")
+        :setBackground(colors.lightGray)
+        :setForeground(colors.black)
 
     goToRequests:onClick(function (self)
         main:setVisible(false)
         requestScreen:setVisible(true)
+    end)
+
+    local function updateList(filter)
+
+        list:clear()
+    
+        for _,item in ipairs(items) do
+            if filter == nil or filter == "" then
+                list:addItem(" "..item)
+    
+            elseif string.find(string.lower(item), string.lower(filter)) then
+                list:addItem(" "..item)
+            end
+        end
+
+    end
+    updateList()
+
+    searchBar:onChange(function(self, value)
+        updateList(value)
     end)
 
 -- Start the UI
