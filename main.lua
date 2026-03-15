@@ -109,9 +109,11 @@ local element9 = main:addButton()
 
     -- List element
     local element77 = requestScreen:addList()
-        :setPosition(2, 2)
-        :setSize(14, 18)
-        :setItems({"Spruce Oak Logs", "Maple Logs"})
+        :setPosition(4, 6)
+        :setSize(20, 10)
+        :setMultiSelection(true)
+        :setItems({"Spruce Oak Logs", "Maple Logs", "3"})
+        :setSelectedBackground(colors.green)
 
     goToRequests:onClick(function (self)
         main:setVisible(false)
