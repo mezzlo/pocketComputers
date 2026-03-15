@@ -112,8 +112,8 @@ local element9 = main:addButton()
         :setItems({"Spruce Oak Logs", "Maple Logs"})
 
     goToRequests:onClick(function (self)
-        main.setVisible(false)
-        requestScreen.setVisible(true)
+        main:setVisible(false)
+        requestScreen:setVisible(true)
     end)
 
 -- Start the UI
