@@ -9,9 +9,7 @@ local basalt = require("basalt")
 local requestScreen = nil
 
 -- Create main frame
-local mainFrame = basalt.createFrame()
-    :setSize(26, 20)
-local main = mainFrame:addFrame()
+local main = basalt.createFrame()
     :setSize(26, 20)
 
 -- Container element
@@ -135,7 +133,7 @@ local items = {
         :setPosition(11, 5)
         :setSize(14, 1)
         :setPlaceholder("type here...")
-        :setFocusedBackground(colors.black)
+        :setBackground(colors.black)
         :setPlaceholderColor(colors.lightGray)
     
     -- Label element
@@ -143,13 +141,6 @@ local items = {
         :setPosition(3, 5)
         :setText("Search:")
     
-    -- BigFont element
-    local element11 = requestScreen:addBigFont()
-        :setPosition(2, 2)
-        :setSize(24, 2)
-        :setText("Request Resources:")
-        :setBackground(colors.lightGray)
-        :setForeground(colors.black)
 
     goToRequests:onClick(function (self)
         main:setVisible(false)
@@ -172,11 +163,11 @@ local items = {
     end
     updateList()
 
-    searchBar:onChange(function(self, value)
+    searchBar:onStateChange(function(self, value)
         updateList(value)
     end)
 
 -- Start the UI
 
-requestScreen:setVisible(false)
+requestScreen.setVisible(false)
 basalt.run()
