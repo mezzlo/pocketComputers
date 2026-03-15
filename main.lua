@@ -142,7 +142,7 @@ local items = {
         :setPlaceholderColor(colors.lightGray)
     
     -- Label element
-    local element10 = requestScreen:addLabel()
+    local element100 = requestScreen:addLabel()
         :setPosition(3, 5)
         :setText("Search:")
     
@@ -170,6 +170,7 @@ local items = {
 
     searchBar:onChange(function(self, value)
         updateList(value)
+        element100:setText("Search1:")
     end)
 
 -- Start the UI
