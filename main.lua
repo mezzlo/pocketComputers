@@ -145,6 +145,12 @@ local items = {
     local element100 = requestScreen:addLabel()
         :setPosition(3, 5)
         :setText("Search:")
+
+    local closeButton = requestScreen:addButton()
+        :setPosition(24,2)
+        :setSize(2,1)
+        :setText("X")
+        :setBackground(colors.red)
     
 
     goToRequests:onClick(function (self)
@@ -169,14 +175,14 @@ local items = {
     updateList()
 
     searchBar:onKey(function(self, value)
-        os.queueEvent("refreshList")
+        updateList(self:getText())
     end)
 
-    basalt.onEvent(function(event)
-        if event == "refreshList" then
-            updateList(searchBar:getValue())
-        end
+    closeButton:onClick(function (self)
+        requestScreen.setVisible(false)
+        main.setVisible(true)
     end)
+
 
 -- Start the UI
 
