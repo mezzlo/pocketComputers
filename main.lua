@@ -179,8 +179,8 @@ local items = {
     end)
 
     closeButton:onClick(function (self)
-        requestScreen.setVisible(false)
-        main.setVisible(true)
+        requestScreen:setVisible(false)
+        main:setVisible(true)
     end)
 
 
