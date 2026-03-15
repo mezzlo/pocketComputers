@@ -173,5 +173,5 @@ local items = {
 
 -- Start the UI
 
-requestScreen.setVisible(false)
+requestScreen:setVisible(false)
 basalt.run()
