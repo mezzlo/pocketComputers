@@ -76,39 +76,39 @@ local element9 = main:addButton()
         :setSize(26, 20)
 
     -- Container element
-    local element1 = requestScreen:addContainer()
+    local element11 = requestScreen:addContainer()
         :setSize(26, 20)
 
     -- Container element
-    local element2 = requestScreen:addContainer()
+    local element22 = requestScreen:addContainer()
         :setSize(1, 20)
         :setBackground(colors.brown)
 
     -- Container element
-    local element3 = requestScreen:addContainer()
+    local element33 = requestScreen:addContainer()
         :setPosition(26, 1)
         :setSize(1, 20)
         :setBackground(colors.brown)
 
     -- Container element
-    local element4 = requestScreen:addContainer()
+    local element44 = requestScreen:addContainer()
         :setSize(26, 1)
         :setBackground(colors.brown)
 
     -- Container element
-    local element5 = requestScreen:addContainer()
+    local element55 = requestScreen:addContainer()
         :setPosition(1, 20)
         :setSize(26, 1)
         :setBackground(colors.brown)
 
     -- Container element
-    local element6 = requestScreen:addContainer()
+    local element66 = requestScreen:addContainer()
         :setPosition(2, 2)
         :setSize(24, 18)
         :setBackground(colors.lightGray)
 
     -- List element
-    local element7 = requestScreen:addList()
+    local element77 = requestScreen:addList()
         :setPosition(2, 2)
         :setSize(14, 18)
         :setItems({"Spruce Oak Logs", "Maple Logs"})
