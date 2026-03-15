@@ -51,10 +51,7 @@ local goToRequests = main:addButton()
     :setSize(12, 3)
     :setText("Requests")
     :setBackground(colors.cyan)
-goToRequests:onClick(function (self)
-    main.setVisible(false)
-    requestScreen(true)
-end)
+
 
 -- Button element
 local element8 = main:addButton()
@@ -113,6 +110,11 @@ local element9 = main:addButton()
         :setPosition(2, 2)
         :setSize(14, 18)
         :setItems({"Spruce Oak Logs", "Maple Logs"})
+
+    goToRequests:onClick(function (self)
+        main.setVisible(false)
+        requestScreen(true)
+    end)
 
 -- Start the UI
 
